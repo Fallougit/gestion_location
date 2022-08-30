@@ -15,57 +15,42 @@
             
             <div>    
                 <label>Nom :</label>
-                <input type="text" name="Nom">
+                <input type="text" name="nom">
                 </div>
             <div>
                 <label for="prenom">Prenom :</label>
-                <input type="text"><br>
+                <input type="text" name="prenom"><br>
             </div>
             <div>
-                <label for="phone">Tel :</label>
-                <input type="tel" name="phone">
+                <label for="numeric">Tel :</label>
+                <input type="numeric" name="phone">
             </div>
             <div>
                 <label for="numeric">CNI :</label>
-                <input type="numeric"><br>
+                <input type="numeric" name="cni"><br>
             </div>
             <div>
                 <label for="date">Date delivranrance :</label>
-                <input type="date" size="30" class="form-control" min="2000-01-01" max="2030-01-01"><br>
+                <input type="date" name="datedel"><br>
             </div>
             <div>
                 <label for="date">Date d'expiration :</label>
-                <input type="date" size="30" class="form-control" min="2000-01-01" max="2030-01-01"><br>
+                <input type="date" name="dateex"><br>
             </div>
             <div>
                 <label for="adresse">Adresse :</label>
-                <input type="text">
+                <input type="text" name="adresse">
             </div>
             <div>
                 <label>Etes-vous un Homme ou une femme ?</label>
-                <input type="radio" name="masqulin" value="Homme">Homme<br>
-                <input type="radio" name="feminin" value="Femme">Femme<br>
+                <input type="radio" name="genre" value="Homme">Homme<br>
+                <input type="radio" name="genre" value="Femme">Femme<br>
             </div>
             <input type="submit" name="Envoyer"><br>
         
         </fieldset>
       
     </form>
-    <?php
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-        $mysqli = new mysqli("localhost", "root", "", "dblocation");
-
-        if(isset($_POST['Envoyer'])){
-            $_POST = $_POST['nom'];
-            $_POST = $_POST['prenom'];
-            $_POST = $_POST['adresse'];
-            $_POST = $_POST['cni'];
-            $_POST = $_POST['masqulin'];
-            $_POST = $_POST['feminin'];
-
-            $mysqli->query("insert into client(nom,prenom,tel,cni,)values(".$_POST['nom'].",".$_POST['prenom'].",".$_POST['phone'].",".$_POST['numeric'].",".$_POST['date'].",".$_POST['date'].",".$_POST['adresse'].")");
-            
-        }
-    ?>
+   
 </body>
 </html>

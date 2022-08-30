@@ -17,7 +17,22 @@
     <?php
          mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
          $mysqli = new mysqli("localhost", "root", "", "dblocation");
-
+ 
+         if(isset($_POST['Envoyer'])){
+             $nom = $_POST['nom'];
+             $prenom = $_POST['prenom'];
+             $phone = $_POST['phone'];
+             $cni = $_POST['cni'];
+             $datedel = $_POST['datedel'];
+             $dateex = $_POST['dateex'];
+             $add = $_POST['adresse'];
+             $genre = $_POST['genre'];
+ 
+            $mysqli->query("insert into client (nom,prenom,tel,cni,datedel,dateex,adress,genre) values ('".$nom."','".$prenom."','".$phone."','".$cni."','".$datedel."','".$dateex."','".$add."','".$genre."')");
+    
+            
+         }
     ?>
+
 </body>
 </html>
